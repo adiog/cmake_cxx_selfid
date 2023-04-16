@@ -29,7 +29,6 @@ function git_current_dirty_suffix() {
   (git_current_is_clean && echo "-clean") || echo "-dirty"
 }
 
-
 function current_date_time() {
   date
   #date "+%Y-%m-%d %H:%M:%S"
@@ -37,5 +36,5 @@ function current_date_time() {
 
 (
   echo "#pragma once"
-  echo "#define SELFID_PRETTY_STRING \"`git_current_branch` (`git_current_commit``git_current_dirty_suffix`) built on `current_date_time`\""
+  echo "#define SELFID_PRETTY_STRING \"`git_current_branch` (`git_current_commit``git_current_dirty_suffix`) built by `whoami`@`hostname` on `current_date_time`\""
 ) > $SELFID_GENERATED_HEADER
